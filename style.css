@@ -1,0 +1,480 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat';
+}
+
+body {
+    overflow-x: hidden;
+    background: #000;
+}
+
+.body-overflow {
+    overflow: hidden;
+}
+
+/*************** Section One ************************/
+
+.section-1 {
+    width: 100%;
+    height: 100vh;
+    background: url(./images/sect1-bg-image.jpg) 50% 50% no-repeat;
+    background-size: cover;
+}
+
+.navbar {
+    position: fixed;
+    z-index: 9999;
+    width: 100%;
+    height: 8vh;
+    /* background: green; */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.merch {
+    z-index: 2;
+    font-size: 25px;
+    color: #fff;
+}
+
+.logo {
+    z-index: 2;
+    width: 27%;
+    height: 60%;
+    background: url(./images/logo.png) 50% 50% no-repeat;
+    background-size: contain;
+}
+
+.burger {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 11%;
+    height: 50%;
+    z-index: 11;
+}
+
+.burger .one, .two, .three {
+    width: 30px;
+    height: 4px;
+    margin-top: 4px;
+    background: #fff;
+    border-radius: 5%;
+    transition: 0.2s;
+}
+
+.burger .one-active {
+    transform: rotate(45deg) translate(-3px , 6px);
+}
+
+.burger .two-active {
+    opacity: 0;
+}
+
+.burger .three-active {
+    transform: rotate(-45deg) translate(5px , -15px)
+}
+
+.menu {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    display: none;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+}
+
+.menu li {
+    width: 40%;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 11;
+    list-style: none;
+    transform: translateX(80px);
+    animation: anchor-anim 0.6s forwards;
+}
+
+.menu .about {
+    animation-delay: 0s;
+}
+
+.menu .video {
+    animation-delay: 0.15s;
+}
+
+.menu .contact {
+    animation-delay: 0.3s;
+}
+
+.menu .help {
+    animation-delay: 0.45s;
+}
+
+.menu li a {
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-weight: 500;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.menu-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.85);
+    animation: overlay-anim 0.7s;
+    z-index: 10;
+}
+
+.menu-show {
+    display: flex;
+}
+
+@keyframes overlay-anim {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 100%;
+    }
+}
+
+@keyframes anchor-anim {
+    0% {
+        transform: translateX(80px);
+    }
+    100% {
+        transform: translateX(0px);
+    }
+}
+
+.content {
+    position: absolute;
+    top: 38%;
+    left: 50%;
+    width: 75%;
+    text-align: center;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+.content-bg {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 200px;
+    background: url(./images/cross.png) 50% 50% no-repeat;
+    background-size: contain;
+}
+
+.content-bg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.content p {
+    color: #fff;
+    font-style: italic;
+    text-transform: uppercase;
+    font-size: 6vw;
+    font-weight: 700;
+}
+
+.scroll-btn {
+    position: absolute;
+    bottom: 6%;
+    left: 50%;
+    width: 140px;
+    height: 40px;
+    transform: translateX(-50%);
+    background: url(/images/btn.png) 50% 50% no-repeat;
+    background-size: contain;
+    z-index: 2;
+}
+
+.section-2 {
+    position: relative;
+    width: 100%;
+    height: 130vh;
+    background: url(/images/sect2-bg-image.png) 50% 50% no-repeat;
+    background-size: cover;
+}
+
+.section-2-title {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    left: 50%;
+    top: 15vh;
+    transform: translateX(-50%);
+    color: #fff;
+    font-style: italic;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.windows {
+    position: absolute;
+    top: 23vh;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+.windows .window-1, .window-2, .window-3 {
+    width: 82%;
+    height: 31%;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+
+.window-1 .img {
+    width: 95%;
+    height: 50%;
+    background: url(/images/window-img-1.jpg) 50% 50% no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+}
+
+.window-2 .img {
+    width: 95%;
+    height: 50%;
+    background: url(/images/window-img-2.jpg) 50% 50% no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+}
+
+.window-3 .img {
+    width: 95%;
+    height: 50%;
+    background: url(/images/window-img-3.jpg) 50% 50% no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+}
+
+.place {
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.date {
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.8);
+    font-size: 14px;
+}
+
+.see-more-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    height: 13%;
+    border-radius: 5px;
+    background: rgba(51, 51, 51, 0.616);
+}
+
+.see-more-btn a {
+    text-decoration: none;
+    color: #fff;
+}
+
+
+
+/******************** MERCH ********************************/
+
+
+
+.merch-container {
+    z-index: 7;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background: url(/images/sect2-bg-image.png) 50% 50% no-repeat;
+    background-size: cover;
+    top: 0;
+    left: 0;
+    text-align: center;
+    transform: translateY(-200%);
+    transition: all 0.6s ease-in-out;
+}
+
+.merch-container-active {
+    transform: translateY(0%);
+}
+
+.logo-active {
+    opacity: 0;
+}
+
+.container-title h2 {
+    font-style: italic;
+    margin-top: 5px;
+    color: #fff;
+    font-size: 48px;
+}
+
+.merches {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+    height: 88vh;   
+}
+
+.merches > div {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    width: 50%;
+    height: 230px;
+}
+
+.merch-1 {
+    display: block;
+}
+
+.merch-1 .img {
+    width: 80%;
+    height: 50%;
+    background: url(/images/merch-1.jpg) 50% 50% no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+}
+
+.merch-2 .img {
+    width: 80%;
+    height: 50%;
+    background: url(/images/merch-2.jpg) 50% 50% no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+}
+
+.merch-3 .img {
+    width: 80%;
+    height: 50%;
+    background: url(/images/merch-3.jpg) 50% 50% no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+}
+
+.merch-4 .img {
+    width: 80%;
+    height: 50%;
+    background: url(/images/merch-4.jpg) 50% 50% no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+}
+
+.merch-5 .img {
+    width: 80%;
+    height: 50%;
+    background: url(/images/merch-5.jpg) 50% 50% no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+}
+
+.merch-6 .img {
+    width: 80%;
+    height: 50%;
+    background: url(/images/merch-6.jpg) 50% 50% no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+}
+
+
+.merches .name p {
+    color: #fff;
+    font-size: 12px;
+}
+
+.merches .size p {
+    color: #fff;
+    font-size: 12px;
+}
+
+.merches .price .dashed {
+    color: #fff;
+    font-size: 12px;
+    text-decoration: line-through;
+}
+
+.merches .price p {
+    color: #fff;
+    font-size: 12px;
+}
+
+.cooperation {
+    margin-top: 100px;
+    background: rgb(26, 25, 25);
+    border-top: 1px solid #fff;
+    width: 100%;
+    height: 40vh;
+    text-align: center;
+}
+
+.cooperation h1 {
+    margin-top: 20px;
+    color: #fff;
+    font-size: 7vw;
+}
+
+.cooperation p {
+    margin-top: 15px;
+    color: #fff;
+    font-size: 4.7vw;
+}
+
+.year {
+    margin-top: 1px;
+}
+
+.social-media ul{
+    margin-top: 15px;
+    width: 100%;
+    height: 11vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.social-media li {
+    list-style: none;
+}
+
+.social-media li a {
+    color: #fff;
+    font-size: 5.5vw;
+}
